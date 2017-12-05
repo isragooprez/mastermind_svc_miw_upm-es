@@ -1,0 +1,21 @@
+language: java
+jdk:
+- oraclejdk8
+branches:
+  only:
+  - master
+  - develop
+notifications:
+  email:
+    recipients:
+    - isragoo.prez@gmail.com
+services:
+- mysql
+before_install:
+- mysql -e 'CREATE DATABASE IF NOT EXISTS bd;'
+script:
+#Test unitario y de integracion en develop
+- mvn verify --settings settings.xml
+- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify --settings settings.xml
+- mvn sonar:sonar -Dsonar.organization=isragooprez-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8e85915ebde5c3c8fcf4104e35894e9ead06e7a6
+
