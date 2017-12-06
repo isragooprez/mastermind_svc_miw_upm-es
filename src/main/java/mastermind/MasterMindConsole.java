@@ -4,11 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MasterMindConsole {
-   
+
     public static void main(String[] args) {
+     menu();  
+    }
+    public static void menu() {
         String clave2;
         Scanner tec = new Scanner(System.in);
-
         System.out.println(" Bienvenido Jugador1, escriba una clave de 5 numeros no iguales");
         String clave1 = tec.next();
         System.out.println(" Jugador 2 introduzca cinco digitos para acertar la clave del jugador 1");
@@ -35,11 +37,12 @@ public class MasterMindConsole {
         System.out.println("Puntuación= " + i);
     }
     
+
     public static int assertNumAndPosition(String clave1, String clave2) {
         int comp = 0;
-    
+
         int a = 0;
-        for (comp = 0; comp < 5; comp++) { 
+        for (comp = 0; comp < 5; comp++) {
             char c2 = clave2.charAt(comp);
             char c1 = clave1.charAt(comp);
             if (c1 == c2) {
@@ -48,7 +51,7 @@ public class MasterMindConsole {
         }
         return a;
     }
-    
+
     public static int assertOnlyNum(String clave1, String clave2) {
         int n = 0;
         int a, b;
