@@ -38,7 +38,6 @@ public class MasterMindConsole {
         }
         System.out.println("Puntuación= " + i);
     }
-
     /**
      * Metodo que calcula los muertos acertado en colo y posision
      * 
@@ -58,15 +57,11 @@ public class MasterMindConsole {
 
             if (c1 == c2) {
                 a++;
-
             }
-
         }
-
         // System.out.println( clave1l + " " + clave2l);
         return a;
     }
-
     /**
      * Metodo que calcula los heridos
      * 
@@ -89,11 +84,8 @@ public class MasterMindConsole {
             a = clave2.indexOf(c1);
             if (n == a) {
                 h += 1;
-
             }
         }
         return n;
-
     }
-
 }
