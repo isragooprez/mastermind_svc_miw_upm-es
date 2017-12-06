@@ -18,10 +18,10 @@ public class MasterMindConsole {
             System.out.println("TURNO " + i);
             System.out.println("La clave que has puesto es: " + clave2);
 
-            int nmuertos = muertos(clave1, clave2);
+            int nmuertos = assertNumAndPosition(clave1, clave2);
             System.out.println("Muertos; " + nmuertos);
 
-            int nheridos = heridos(clave1, clave2);
+            int nheridos = assertOnlyNum(clave1, clave2);
             System.out.println("Heridos: " + nheridos);
 
             ++i;
@@ -35,7 +35,7 @@ public class MasterMindConsole {
         System.out.println("Puntuación= " + i);
     }
     
-    public static int muertos(String clave1, String clave2) {
+    public static int assertNumAndPosition(String clave1, String clave2) {
         int comp = 0;
     
         int a = 0;
@@ -49,7 +49,7 @@ public class MasterMindConsole {
         return a;
     }
     
-    public static int heridos(String clave1, String clave2) {
+    public static int assertOnlyNum(String clave1, String clave2) {
         int n = 0;
         int a, b;
         int h = 0;
