@@ -27,14 +27,12 @@ public class Game {
         this.state = state;
     }
 
-    public Turn getTurn() {
-        return turn;
+    public ConsoleBoardView getBoard() {
+        return board;
     }
 
-    public void setTurn(Turn turn) {
-        this.turn = turn;
+    public void setBoard(ConsoleBoardView board) {
+        this.board = board;
     }
-    
-    
 
 }
