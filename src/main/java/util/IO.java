@@ -16,15 +16,15 @@ public class IO {
         System.out.print(string);
     }
 
-    public String readTocken() {
+    public String readToken() {
 
-        String tocken = null;
+        String token = null;
         try {
-            tocken = bufferedReader.readLine();
+            token = bufferedReader.readLine();
         } catch (IOException e) {
             this.writeError("de cadena de numeros");
         }
-        return tocken;
+        return token;
     }
 
     public int readInt(String title) {
@@ -32,10 +32,10 @@ public class IO {
         boolean ok = false;
         do {
             try {
-                input = Integer.parseInt(this.readTocken());
+                input = Integer.parseInt(this.readToken());
                 ok = true;
             } catch (Exception ex) {
-                this.writeError("entero");
+                this.writeError("ingrese un entero");
             }
         } while (!ok);
         return input;
@@ -80,7 +80,7 @@ public class IO {
         io.writeln("Valores no validos, recuerda son 4 numeros");
     }
 
-    public String writeTocken() {
+    public String writetoken() {
         String result = "";
         int[] secret = new int[4];
         for (int i = 0; i < 4; i++) {

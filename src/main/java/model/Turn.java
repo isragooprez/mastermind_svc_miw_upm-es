@@ -1,15 +1,19 @@
 package model;
 
+import util.IO;
+
 public class Turn {
-    private Integer opportunityMax;
+    private Integer opportunityValueMax;
+    private IO io;
 
     public Turn(Integer opportunityMax) {
         super();
-        this.opportunityMax = opportunityMax;
+        this.opportunityValueMax = opportunityMax;
+        io= new IO();
     }
 
     public Integer getOpportunityMax(Integer opportunityPresent) {
-        System.out.println("Intento: #"+(opportunityMax-opportunityPresent));
+       io.writeln("Intento: #"+(opportunityValueMax-opportunityPresent));
         return opportunityPresent;
     }
 }
