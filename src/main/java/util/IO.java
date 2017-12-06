@@ -42,7 +42,7 @@ public class IO {
     }
 
     public void writeError(String formato) {
-        System.out.println("ERROR DE FORMATO! " + "Introduzca un valor con formato " + formato + ".");
+        System.out.println("ERROR DE FORMATO! " + "Introduzca un valor con formato. Ejemplo:" + formato + ".");
     }
 
     public String readString(String title) {

@@ -9,7 +9,7 @@ public class Turn {
     }
 
     public Integer getOpportunityMax(Integer opportunityPresent) {
-        System.out.println("Intento #"+(opportunityMax-opportunityPresent));
+        System.out.println("Intento: #"+(opportunityMax-opportunityPresent));
         return opportunityPresent;
     }
 }
