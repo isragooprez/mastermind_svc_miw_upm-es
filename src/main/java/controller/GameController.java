@@ -2,6 +2,7 @@ package controller;
 
 import model.Game;
 import model.State;
+import view.ConsoleBoardView;
 
 public abstract class GameController {
     private Game game;
@@ -22,6 +23,13 @@ public abstract class GameController {
         assert state != null;
         game.setState(state);
     }
+    
+    protected ConsoleBoardView getConsoleBoardView() {
+        return game.getBoard();
+    }
+    
+    
+    
 
 }
 

@@ -35,4 +35,14 @@ public class Game {
         this.board = board;
     }
 
+    public Turn getTurn() {
+        return turn;
+    }
+
+    public void setTurn(Turn turn) {
+        this.turn = turn;
+    }
+    
+    
+
 }

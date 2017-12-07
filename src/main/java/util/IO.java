@@ -80,7 +80,7 @@ public class IO {
         io.writeln("Valores no validos, recuerda son 4 numeros");
     }
 
-    public String writetoken() {
+    public String writeToken() {
         String result = "";
         int[] secret = new int[4];
         for (int i = 0; i < 4; i++) {
