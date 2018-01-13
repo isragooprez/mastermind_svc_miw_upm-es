@@ -1,4 +1,4 @@
-package controller;
+package util;
 
 import util.IO;
 
@@ -19,14 +19,15 @@ public class LimitedIntDialog {
 
     public int read() {
         IO io = new IO();
-        io.writeln("Presiona 1 para jugar, si deseas ver el demo presiona 0");
+        io.writeln("Presiona 0: Demo.");
+        io.writeln("Presiona 1: Jugar");
         int value;
         boolean ok;
         do {
             value = io.readInt(title);
             ok = limits.includes(value);
             if (!ok) {
-                io.writeln("El valor debe estar entre " + limits);
+                io.writeln("El valor debe estar entre: " + limits);
             }
         } while (!ok);
         return value;

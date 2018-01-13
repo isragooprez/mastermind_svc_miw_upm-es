@@ -1,4 +1,4 @@
-package controller;
+package util;
 
 public class ClosedInterval {
     private int min;
@@ -19,5 +19,14 @@ public class ClosedInterval {
     public String toString() {
         return "[" + min + ", " + max + "]";
     }
+
+    public int getMin() {
+        return min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+    
 
 }

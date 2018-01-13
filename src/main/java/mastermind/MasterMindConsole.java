@@ -5,22 +5,22 @@ import controller.LogicController;
 
 public class MasterMindConsole {
 
-    private LogicController logic;
+    private LogicController logicController;
 
     public MasterMindConsole() {
 
-        logic = new LogicController();
+        logicController = new LogicController();
     }
 
     public void play() {
 
-        GameController controller;
+        GameController gameController;
         do {
-            controller = logic.getController();
-            if (controller != null) {
-                controller.control();
+            gameController = logicController.getController();
+            if (gameController != null) {
+                gameController.control();
             }
-        } while (controller != null);
+        } while (gameController != null);
 
     }
 

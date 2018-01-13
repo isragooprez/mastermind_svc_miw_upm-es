@@ -3,7 +3,7 @@ package model;
 import view.ConsoleBoardView;
 
 public class Game {
-    public static final int OPPORTUNITY = 10;
+    public static final int INTENTMAX= 10;
 
     public static final int FORMATMAX = 4;
 
@@ -15,8 +15,8 @@ public class Game {
 
     public Game() {
         state = State.INITIAL;
-        board = new ConsoleBoardView(Game.FORMATMAX, Game.OPPORTUNITY);
-        turn = new Turn(Game.OPPORTUNITY);
+        board = new ConsoleBoardView(Game.FORMATMAX, Game.INTENTMAX);
+        turn = new Turn(Game.INTENTMAX);
     }
 
     public State getState() {

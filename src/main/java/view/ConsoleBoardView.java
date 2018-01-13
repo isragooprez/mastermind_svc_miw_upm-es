@@ -13,13 +13,13 @@ public class ConsoleBoardView {
 
         IO io = new util.IO();
         io.writeln("------- MASTER MIND GAME----");
-        io.writeln("Intento: ? [cuatro numeros de entre 1-amarillo, 2-rojo, 3-verde, 4-azul, 5-blanco, 6-negro] ");
-        io.writeln("Formato example: ARNB");
+        io.writeln("Intento: ? [Cuatro números de entre:  1-Amarillo, 2-Rojo, 3-Verde, 4-Azul, 5-blanco, 6-Negro] ");
+        io.writeln("Formato example: 1122");
         io.writeln("Coloca una combinación de " + tokenLength + " numeros, y tienes " + oportunityLength + " oportunidades");
-        io.write("Codigo secreto: >");
+        io.write("Código secreto");
         for (int i = 0; i < tokenLength; i++) {
             io.write("*");
         }
-        io.writeln("<");
+        io.writeln("");
     }
 }

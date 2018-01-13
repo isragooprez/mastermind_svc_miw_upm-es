@@ -3,6 +3,8 @@ package util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IO {
 
@@ -89,8 +91,16 @@ public class IO {
 
         result = String.valueOf(secret[0])
                 .concat(String.valueOf(secret[1]).concat(String.valueOf(secret[2]).concat(String.valueOf(secret[3]))));
-        new IO().writeln(" la máquina pone " + result);
+        new IO().writeln("              Ordenador escribe " + result);
         new IO().readString("Enter para continuar!");
+        return result;
+    }
+
+    public List<Integer> convertStringToArrayList(String text) {
+        List<Integer> result = new ArrayList<Integer>(text.length());
+        for (int i = 0; i < text.length(); i++) {
+            result.add(Integer.parseInt(text.substring(i, i + 1)));
+        }
         return result;
     }
 

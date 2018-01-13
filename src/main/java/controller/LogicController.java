@@ -2,6 +2,7 @@ package controller;
 
 import model.Game;
 import util.IO;
+import util.LimitedIntDialog;
 
 public class LogicController {
     private Game game;
@@ -18,7 +19,7 @@ public class LogicController {
         game = new Game();
         startController = new StartController(game);
         continueController = new ContinueController(game);
-        putController = new PutController(Game.FORMATMAX, Game.OPPORTUNITY);
+        putController = new PutController(Game.FORMATMAX, Game.INTENTMAX);
     }
 
     public GameController getController() {
@@ -48,7 +49,7 @@ public class LogicController {
                 } else {
                     putController.result();
                 }
-            } while (!putController.gameOver(numberOportunity, Game.OPPORTUNITY));
+            } while (!putController.gameOver(numberOportunity, Game.INTENTMAX));
         case FINAL:
             return continueController;
         case EXIT:
