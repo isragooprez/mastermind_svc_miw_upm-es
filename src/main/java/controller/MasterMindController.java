@@ -10,6 +10,8 @@ public class MasterMindController {
 
     private int limitRandoMax = 6;
 
+    private int points = 40;
+
     private List<Integer> codeToken;
 
     private List<Integer> readToken;
@@ -44,6 +46,7 @@ public class MasterMindController {
                 }
                 if (readToken.get(i) == codeToken.get(j) && checked[j] == false && i != j) {
                     counter++;
+//                    points=points-10;
                     checked[j] = true;
                     break;
                 }
@@ -56,7 +59,10 @@ public class MasterMindController {
         int counter = 0;
         for (int i = 0; i < codeToken.size(); i++) {
             if (readToken.get(i) == codeToken.get(i))
+            {                
                 counter++;
+//                points=points-5;
+            }
         }
         return counter;
     }
@@ -74,6 +80,7 @@ public class MasterMindController {
     public void result() {
         IO io = new IO();
         io.writeln(Message.RESULT_R.toString() + getMuertos() + Message.RESULT_M.toString() + getHeridos() + Message.RESULT_H.toString());
+        io.writeln("Te queda "+getPoints() +"puntos!!");
     }
 
     public void win() {
@@ -88,6 +95,13 @@ public class MasterMindController {
             return true;
         }
         return false;
+    }
+    
+    public int getPoints() {
+        int result;
+        result= (points-((getMuertos()*10)+(getHeridos()*5)));
+        return result;
+        
     }
 
 }
