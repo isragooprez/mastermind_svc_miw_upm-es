@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import util.IO;
+import util.Message;
 
 public class MasterMindController {
     private ValidateController validateToken;
@@ -30,7 +31,7 @@ public class MasterMindController {
     }
 
     public String getCode() {
-        return String.format("%s%s%s%s", codeToken.toArray());
+        return String.format(Message.FORMAT_TOKEN.toString(), codeToken.toArray());
     }
 
     public int getHeridos() {
@@ -72,18 +73,18 @@ public class MasterMindController {
 
     public void result() {
         IO io = new IO();
-        io.writeln("Resultado: " + getMuertos() + " muertos y " + getHeridos() + " heridos");
+        io.writeln(Message.RESULT_R.toString() + getMuertos() + Message.RESULT_M.toString() + getHeridos() + Message.RESULT_H.toString());
     }
 
     public void win() {
         IO io = new IO();
-        io.writeln(getMuertos() + " muertos!!! Victoria \n");
+        io.writeln(getMuertos() + Message.GAME_WIN.toString());
     }
 
     public boolean gameOver(Integer numberOportunity, Integer oportunityMax) {
         if (numberOportunity == oportunityMax) {
             IO io = new IO();
-            io.writeln("\nPerdiste: El codigo es [" + getCode() + "]");
+            io.writeln(Message.GAME_OVER.toString() + "[" + getCode() + "]");
             return true;
         }
         return false;

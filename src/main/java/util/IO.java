@@ -10,6 +10,8 @@ public class IO {
 
     private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
+    public static int RANGE_SECRET_CODE = 4;
+
     public void writeln(String string) {
         System.out.println(string);
     }
@@ -24,7 +26,7 @@ public class IO {
         try {
             token = bufferedReader.readLine();
         } catch (IOException e) {
-            this.writeError("de cadena de numeros");
+            this.writeError("" + Error.ERROR_TOKEN);
         }
         return token;
     }
@@ -37,14 +39,14 @@ public class IO {
                 input = Integer.parseInt(this.readToken());
                 ok = true;
             } catch (Exception ex) {
-                this.writeError("ingrese un entero");
+                this.writeError(Error.ERROR_INT.toString());
             }
         } while (!ok);
         return input;
     }
 
     public void writeError(String formato) {
-        System.out.println("ERROR DE FORMATO! " + "Introduzca un valor con formato. Ejemplo:" + formato + ".");
+        System.out.println(Error.ERROR_FORMAT.toString() + formato + ".");
     }
 
     public String readString(String title) {
@@ -56,7 +58,7 @@ public class IO {
                 input = bufferedReader.readLine();
                 ok = true;
             } catch (Exception ex) {
-                this.writeError("de cadena de caracteres");
+                this.writeError(Error.ERROR_CHAR.toString());
             }
         } while (!ok);
         return input;
@@ -79,7 +81,7 @@ public class IO {
 
     public void error() {
         IO io = new IO();
-        io.writeln("Valores no validos, recuerda son 4 numeros");
+        io.writeln(Error.ERROR_RANGE.toString());
     }
 
     public String writeToken() {
@@ -92,7 +94,7 @@ public class IO {
         result = String.valueOf(secret[0])
                 .concat(String.valueOf(secret[1]).concat(String.valueOf(secret[2]).concat(String.valueOf(secret[3]))));
         new IO().writeln("              Ordenador escribe " + result);
-        new IO().readString("Enter para continuar!");
+        new IO().readString(Message.CONFIRM_MSG.toString());
         return result;
     }
 
