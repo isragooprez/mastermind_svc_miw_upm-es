@@ -27,7 +27,7 @@ public class LimitedIntDialog {
             value = io.readInt(title);
             ok = limits.includes(value);
             if (!ok) {
-                io.writeln(Error.ERROR_LIMIT.toString() + limits);
+                io.writeln("" + Error.ERROR_LIMIT + limits);
             }
         } while (!ok);
         return value;
