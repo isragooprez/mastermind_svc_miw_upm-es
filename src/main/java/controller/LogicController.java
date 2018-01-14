@@ -3,6 +3,7 @@ package controller;
 import model.Game;
 import util.IO;
 import util.LimitedIntDialog;
+import util.Message;
 
 public class LogicController {
     private Game game;
@@ -28,7 +29,7 @@ public class LogicController {
             return startController;
         case GAMMING:
             int numberOportunity = 0;
-            int users = new LimitedIntDialog("Cuántos usuarios?", 0, 1).read();
+            int users = new LimitedIntDialog(Message.QUESTION_USER.toString(), 0, 1).read();
             do {
                 game.getTurn().getOpportunityMax(numberOportunity);
                 for (int i = 0; i < 1; i++) {
