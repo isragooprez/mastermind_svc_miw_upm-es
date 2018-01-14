@@ -12,6 +12,12 @@ public class IO {
 
     public static int RANGE_SECRET_CODE = 4;
 
+    public void writeCodeSecret(int tokenLength) {
+        for (int i = 0; i < tokenLength; i++) {
+            System.out.print("*");
+        }
+    }
+
     public void writeln(String string) {
         System.out.println(string);
     }
@@ -70,7 +76,7 @@ public class IO {
         do {
             String input = this.readString(title);
             if (input.length() != 1) {
-                this.writeError("caracter");
+                this.writeError(" caracter invalido");
             } else {
                 charValue = input.charAt(0);
                 ok = true;

@@ -4,7 +4,7 @@ package util;
 public enum Error {
     
     ERROR_LIMIT("El valor debe estar entre: "),
-    ERROR_FORMAT("ERROR DE FORMATO! " + "Introduzca un valor con formato. Ejemplo: s/n"),
+    ERROR_FORMAT("ERROR DE FORMATO! " + "Ingrese S=continuar N=salir S/N."),
     ERROR_TOKEN("de cadena de numeros"),
     ERROR_INT("ingrese un entero"),
     ERROR_CHAR("de cadena de caracteres"),
